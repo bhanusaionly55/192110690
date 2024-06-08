@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      form {
+        text-align: center;
+        color: aqua;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Average Calculator</h1>
+    <form action="calc" method="post">
+      {% csrf_token %}
+      <input type="text" name="dig" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

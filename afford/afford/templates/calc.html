@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc</title>
+    <style>
+      p {
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>List: {{ digit }}</p>
+    <form action="even" method="post" style="text-align: center">
+      {% csrf_token %}
+      <input type="hidden" name="dig" value="{{ digit|join:' ' }}" />
+      <input type="submit" value="Even" />
+    </form>
+    <form action="prim" method="post" style="text-align: center">
+      {% csrf_token %}
+      <input type="hidden" name="dig" value="{{ digit|join:' ' }}" />
+      <input type="submit" value="Prime" />
+    </form>
+    <div>Even: {{ even }}</div>
+    <div>Prime: {{ prime }}</div>
+  </body>
+</html>
+{% endblock %}
